@@ -1,0 +1,91 @@
+:root{
+  --gold: #d4af37;
+  --panel-bg: rgba(0,0,0,0.55);
+  --accent: #7ed957;
+}
+
+*{box-sizing:border-box}
+html,body{
+  height:100%;
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#111;
+  color:#fff;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.panel{
+  width:90%;
+  max-width:460px;
+  padding:18px;
+  border-radius:10px;
+  text-align:center;
+  background:var(--panel-bg);
+  backdrop-filter: blur(4px);
+}
+
+.title{
+  font-family: "Times New Roman", serif;
+  color:var(--gold);
+  font-size:38px;
+  margin:6px 0 0;
+  text-shadow: 0 2px 0 rgba(0,0,0,0.6);
+}
+
+.subtitle{
+  font-family: "Times New Roman", serif;
+  color:var(--gold);
+  font-size:18px;
+  margin:4px 0 18px;
+}
+
+.row{margin:12px 0}
+.btn-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+button{
+  cursor:pointer;
+  padding:10px 16px;
+  border-radius:8px;
+  border:0;
+  font-size:15px;
+  background:var(--accent);
+  color:#062;
+  font-weight:700;
+  transition:transform .12s, filter .12s;
+}
+button:hover{transform:translateY(-2px)}
+label{display:block;margin-bottom:6px;font-size:14px;color:#ddd}
+
+canvas{
+  display:block;
+  margin-top:16px;
+  border:3px solid rgba(255,255,255,0.06);
+  box-shadow:0 8px 18px rgba(0,0,0,0.7);
+  background:#000;
+  touch-action: none; /* prevent default touch scrolling while playing */
+}
+
+.colors{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.colors input[type="color"]{width:48px;height:36px;border:0;background:transparent;cursor:pointer}
+
+.touch-panel{margin-top:12px}
+.control-grid{
+  display:grid;
+  grid-template-columns:60px 60px 60px;
+  grid-template-rows:60px 60px 60px;
+  gap:8px;
+  justify-content:center;
+  align-items:center;
+}
+.control-btn{
+  width:60px;height:60px;border-radius:10px;border:0;
+  background:rgba(255,255,255,0.08); color:#fff; font-size:24px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+.small{font-size:13px;color:#ccc}
+.note small{color:#bbb}
+@media (max-width:520px){
+  .panel{padding:14px}
+  .title{font-size:30px}
+  button{font-size:14px}
+  canvas{width:92%;height:auto}applet
+}
