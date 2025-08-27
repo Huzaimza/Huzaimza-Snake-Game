@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Huzaimza Snake Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="menu" class="panel">
+    <h1 class="title">Huzaimza Snake Game</h1>
+    <h3 class="subtitle">Made by Huzaimza</h3>
+
+    <div class="row">
+      <label>Select difficulty:</label>
+      <div class="btn-row">
+        <button onclick="startGame(150)">Easy</button>
+        <button onclick="startGame(100)">Medium</button>
+        <button onclick="startGame(70)">Hard</button>
+      </div>
+    </div>
+
+    <div class="row colors">
+      <div>
+        <label>Snake Color:</label>
+        <input id="snakeColor" type="color" value="#00ff00" />
+      </div>
+      <div>
+        <label>Food Color:</label>
+        <input id="foodColor" type="color" value="#ff0000" />
+      </div>
+      <div>
+        <label>Background:</label>
+        <input id="bgColor" type="color" value="#000000" />
+      </div>
+    </div>
+
+    <div class="row">
+      <label>Control Mode:</label>
+      <select id="controlMode">
+        <option value="keyboard">Keyboard</option>
+        <option value="touch">Touch</option>
+      </select>
+    </div>
+
+    <div class="row note">
+      <small>Tip: On mobile you can tap WASD OR swipe</small>
+    </div>
+  </div>
+
+  <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+  <div id="touchControls" class="touch-panel" style="display:none;">
+    <div class="control-grid">
+      <div></div>
+      <div><button class="control-btn" data-dir="UP">⬆</button></div>
+      <div></div>
+
+      <div><button class="control-btn" data-dir="LEFT">⬅</button></div>
+      <div></div>
+      <div><button class="control-btn" data-dir="RIGHT">➡</button></div>
+
+      <div></div>
+      <div><button class="control-btn" data-dir="DOWN">⬇</button></div>
+      <div></div>
+    </div>
+  </div>
+
+  <div id="gameOverScreen" class="panel" style="display:none;">
+    <h2 id="finalScore"></h2>
+    <h3 id="bestScoreShow"></h3>
+    <div class="btn-row">
+      <button onclick="restartGame()">Restart</button>
+      <button onclick="backToMenu()">Back to Menu</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
